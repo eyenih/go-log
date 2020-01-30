@@ -1,12 +1,12 @@
 package log
 
 type Logger interface {
-	Trace(string, map[string]interface{})
-	Debug(string, map[string]interface{})
-	Info(string, map[string]interface{})
-	Warn(string, map[string]interface{})
-	Error(string, map[string]interface{})
-	Fatal(string, map[string]interface{})
+	Tracef(string, ...interface{})
+	Debugf(string, ...interface{})
+	Infof(string, ...interface{})
+	Warnf(string, ...interface{})
+	Errorf(string, ...interface{})
+	Fatalf(string, ...interface{})
 }
 
 type DummyLogger bool
@@ -17,9 +17,9 @@ func NewDummyLogger() *DummyLogger {
 	return &l
 }
 
-func (l DummyLogger) Trace(string, map[string]interface{}) {}
-func (l DummyLogger) Debug(string, map[string]interface{}) {}
-func (l DummyLogger) Info(string, map[string]interface{})  {}
-func (l DummyLogger) Warn(string, map[string]interface{})  {}
-func (l DummyLogger) Error(string, map[string]interface{}) {}
-func (l DummyLogger) Fatal(string, map[string]interface{}) {}
+func (l DummyLogger) Tracef(string, ...interface{}) {}
+func (l DummyLogger) Debugf(string, ...interface{}) {}
+func (l DummyLogger) Infof(string, ...interface{})  {}
+func (l DummyLogger) Warnf(string, ...interface{})  {}
+func (l DummyLogger) Errorf(string, ...interface{}) {}
+func (l DummyLogger) Fatalf(string, ...interface{}) {}
